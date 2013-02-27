@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fresh Tilled Soil Video Conference | WebRTC Test</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body id="body">
+
+	<!-- room selection overlay -->
+	<div id="roomOverlayBox" class="room-overlay-box">
+
+		<!-- room entry box -->
+		<div id="roomEntryBox" class="room-box"></div>
+
+	</div>
+
+  <div id="main">
+
+	  <!-- my video -->
+		<video id="sourcevid" class="source-video" autoplay></video>
+
+	  <!-- connected indicator -->
+		<div id="connectionIndicator" style="visibility:hidden;" class="connected-indicator">CONNECTED</div>
+
+		<!-- number of occupants -->
+		<div id="numberOfOccupants" class="number-of-occupants">Occupants: 0</div>
+
+	  <!-- remote video -->
+		<video id="remotevid" class="remote-video drop-shadow raised" autoplay></video>
+
+	  <br><br><br><br>
+
+	  <!-- video conference controls -->
+	  <div class="conference-controls">
+
+		  <button id="btn1" type="button" class="btn" style="display:none;">Start Video</button>
+		  <button id="btn2" type="button" class="btn" style="display:none;">Stop video</button>
+		  <button id="btn3" type="button" class="btn">Connect</button>
+		  <button id="btn4" type="button" class="btn">Disconnect</button>
+	  </div>
+
+	  <br><br><br><br>
+
+  </div>
+
+  <script src="js/freshWebRTC.js"></script>
+  <script>
+//  var socket = new WebSocket('ws://onepaul.local:1337/');
+	  var webRTC_1 = new freshTilledSoil_WebRTC({
+		  										socketServerAddress 	: 'ws://192.168.1.5:1337/', // websocket server address
+	  											stunServer						: 'stun.l.google.com:19302' // STUN/ICE server address
+	  										});
+  </script>
+</body>
+</html>
